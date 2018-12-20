@@ -3,24 +3,54 @@
 \section{Introductie} % The \section*{} command stops section numbering
 \label{sec:introductie}
 
-Hier introduceer je werk. Je hoeft hier nog niet te technisch te gaan.
+ Momenteel worden de meeste computerexamens op Hogeschool Gent in een beveiligde omgeving op een computer van de hogeschool afgenomen. Deze methodiek zorgt voor een hoge kost. De hogeschool moet een groot aantal computers te beschikking stellen. Deze moeten beschikken over software eigen aan het examen, en monitoringsoftware bevatten zodat examens in een beveiligde omgeving afgelegd kunnen worden. \\ In deze bachelorproef onderzoeken we de haalbaarheid van een beveiligde omgeving waar studenten computerexamens op hun eigen laptop kunnen afleggen. Deze beveilige omgeving moet maximaal vermijden dat fraude mogelijk is. \\
 
-Je beschrijft zeker:
+Deelonderzoeksvragen:
+  \begin{itemize}
+     \item Hoe gebeuren computerexamens nu op de hogeschool? Welke tools worden gebruikt? Welke regels en beperkingen leggen lectoren nu typisch op bij computerexamens?
+     
+     \item Welke tools/oplossingen bestaan er tegenwoordig voor dit soort situaties? Zijn die voldoende flexibel om bijvoorbeeld een examen programmeren of andere ict-vakken te faciliteren?
+     
+     \item Als we zelf een omgeving willen opzetten, welke componenten moet die dan bevatten? Welke beperkingen kunnen we studenten opleggen en welk gedrag kunnen we niet vermijden?
+  \end{itemize}
 
-\begin{itemize}
-  \item de probleemstelling en context
-  \item de motivatie en relevantie voor het onderzoek
-  \item de doelstelling en onderzoeksvraag/-vragen
-\end{itemize}
+%Hier introduceer je werk. Je hoeft hier nog niet te technisch te gaan.
+%Je beschrijft zeker:
+%\begin{itemize}
+%  \item de probleemstelling en context
+%  \item de motivatie en relevantie voor het onderzoek
+%  \item de doelstelling en onderzoeksvraag/-vragen
+%\end{itemize}
 
 %---------- Stand van zaken ---------------------------------------------------
 
-\section{State-of-the-art}
-\label{sec:state-of-the-art}
+\section{Literatuurstudie}
+\label{sec:literatuurstudie}
 
-Hier beschrijf je de \emph{state-of-the-art} rondom je gekozen onderzoeksdomein. Dit kan bijvoorbeeld een literatuurstudie zijn. Je mag de titel van deze sectie ook aanpassen (literatuurstudie, stand van zaken, enz.). Zijn er al gelijkaardige onderzoeken gevoerd? Wat concluderen ze? Wat is het verschil met jouw onderzoek? Wat is de relevantie met jouw onderzoek?
+\subsection{Voordelen van bring-your-own-device examens}
 
-Verwijs bij elke introductie van een term of bewering over het domein naar de vakliteratuur, bijvoorbeeld~\autocite{Doll1954}! Denk zeker goed na welke werken je refereert en waarom.
+Studenten die een examen afleggen op hun eigen hardware zijn vertrouwd met hun toestel. Waardoor hun stressgevoeligheid afneemt, volgens
+ \textcite{TeckSwee2014}. In dat onderzoek was er op een populatie van 672 studenten 74.02\% blij met deze manier om examens af te nemen. 
+
+\subsection{Problemen bij bring-your-own-device examens}
+\subsubsection{Fraude}
+Aangezien examens afleggen op eigen hardware een relatief nieuw gegeven is, ervaren we nog enkele kinderziektes.\\ \textcite{Dawson2016} bekeek in zijn onderzoek 5 manieren om fraude te plegen tijdens een examen op eigen laptop, namelijk: \\
+\begin{itemize}
+    \item De examenopgave lokaal opslaan en achteraf online plaatsen.
+    \item Het examen op een virtuele omgeving afleggen en op die manier het besturingssysteem manipuleren
+    \item Scripts uitvoeren via usb-keyboard hacks
+    \item Software aanpassingen maken 
+    \item Cold-boot aanval\\
+\end{itemize}
+
+
+Volgens het onderzoek van \textcite{VegendiaSindre2015} is het vermijden van elektronische communicatie een prioriteit. Dit is dan ook iets wat in de proof-of-concept onmogelijk gemaakt moet worden. 
+
+\subsubsection{Overige problemen}
+
+Naast fraude zijn er andere aandachtspunten bij het afnemen van examens op eigen hardware, \textcite{Hillier2015} heeft het in zijn onderzoek over onder andere: laptops die niet sterk genoeg zijn om bepaalde software aan te kunnen, onverwachte crashes van software of besturingssystemen, hardware die tijdens het examen faalt en batterijcapaciteit (indien er geen toegang tot stroom is). 
+
+
 
 % Voor literatuurverwijzingen zijn er twee belangrijke commando's:
 % \autocite{KEY} => (Auteur, jaartal) Gebruik dit als de naam van de auteur
@@ -29,23 +59,23 @@ Verwijs bij elke introductie van een term of bewering over het domein naar de va
 %   functie heeft in de zin (bv. ``Uit onderzoek door Doll & Hill (1954) bleek
 %   ...'')
 
-Je mag gerust gebruik maken van subsecties in dit onderdeel.
 
 %---------- Methodologie ------------------------------------------------------
 \section{Methodologie}
 \label{sec:methodologie}
 
-Hier beschrijf je hoe je van plan bent het onderzoek te voeren. Welke onderzoekstechniek ga je toepassen om elk van je onderzoeksvragen te beantwoorden? Gebruik je hiervoor experimenten, vragenlijsten, simulaties? Je beschrijft ook al welke tools je denkt hiervoor te gebruiken of te ontwikkelen.
+Voor dit onderzoek maken we een Analyse en beslissen we over de scope en de vereisten van de beveiligde omgeving. We gaan een onderzoek doen naar huidige oplossingen voor bring-your-own-device examens. \\ Via een rondvraag bij docenten gaan we onderzoeken welke vereisten elk computerexamen heeft. Zo kunnen we in de proof-of-concept een preset maken voor elk specifiek examen op computer. \\ De proof-of-concept zelf zal een volledig virtuele omgeving zijn, daarvoor gaan we o.a. gebruik maken van GNS3 en VirtualBox. 
 
 %---------- Verwachte resultaten ----------------------------------------------
 \section{Verwachte resultaten}
 \label{sec:verwachte_resultaten}
 
-Hier beschrijf je welke resultaten je verwacht. Als je metingen en simulaties uitvoert, kan je hier al mock-ups maken van de grafieken samen met de verwachte conclusies. Benoem zeker al je assen en de stukken van de grafiek die je gaat gebruiken. Dit zorgt ervoor dat je concreet weet hoe je je data gaat moeten structureren.
+Aan het einde van dit onderzoek verwachten we een compleet werkende en veilige proof-of-concept omgeving te hebben. De bedoeling is dat docenten hiermee vlot hun examens kunnen voorbereiden en verzekerd zijn van de fraudebestendigheid.
+
 
 %---------- Verwachte conclusies ----------------------------------------------
 \section{Verwachte conclusies}
 \label{sec:verwachte_conclusies}
 
-Hier beschrijf je wat je verwacht uit je onderzoek, met de motivatie waarom. Het is \textbf{niet} erg indien uit je onderzoek andere resultaten en conclusies vloeien dan dat je hier beschrijft: het is dan juist interessant om te onderzoeken waarom jouw hypothesen niet overeenkomen met de resultaten.
+We verwachten dat een dergelijke omgeving op te zetten is. Al vrezen we wel dat er enkele beperkingen aan dit systeem zullen zijn. Bijvoorbeeld: aangezien het niet de bedoeling is dat er software op de laptop van een student geïnstalleerd wordt, zal je extra informatie die een student op zijn laptop zelf staan heeft niet kunnen verbieden. 
 
