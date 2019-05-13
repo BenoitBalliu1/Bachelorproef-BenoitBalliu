@@ -110,15 +110,24 @@ Na wat onderzoek te doen hierrond bleek dat deze out of scope vielen. Deze zijn 
 \subsubsection{Werkwijze}
 Een lector bouwt een examen-image vanaf een template, die  installeert op dergelijke template de nodige software voor het examen, plaatst de nodige files op het systeem (GitHub Classroom) en test of alles werkt.  Daarna wordt er via een tool (Packer e.d.) een image van die machine gemaakt.  Bij aanvang van het examen vraagt elke student een kopie van die virtuele machine aan via een cloudprovider (Amazon AWS, Microsoft Azure e.d.) met credentials die door de school aangeleverd worden. De lector kan via de firewallinstellingen ook beslissen of de studenten op het internet mogen en zoja welke sites ze mogen bezoeken. Wanneer ze toegang tot hun persoonlijke machine gekregen hebben krijgen ze, zoals bij een normaal examen, tijd om de vragent te beantwoorden. Wanneer ze daarmee klaar zijn kunnen ze hun examen via GitHub Classroom indienen en wordt de machine terug verwijderd. 
 
-\subsubsection{Voordelen}
+\subsubsection{Voordelen van virtualisatie}
 
 De voordelen van GitHub Classroom worden hier niet besproken, daarover kan u in de \hyperref[sec:GHC]{volgende sectie} lezen.
 \begin{itemize}
  \item Alle virtuele machines beginnen in dezelfde staat, zo ben je zeker dat elke student tijdig kan beginnen en geen software problemen zal tegenkomen (indien de machines juist geconfigureerd zijn door de lector). 
  \item Dankzij centraal management bij de cloud provider kan toegang tot het netwerk voor studenten heel makkelijk afgeschermd of gelimiteerd worden.
  \item  De machines worden enkel tijdens het examen gebruikt en brengen buiten tijdens het examen geen kosten met zich mee. 
- \item Er kunnen zich geen verboden documenten op de virtuele machines bevinden. Enkel de documenten die de docent op de machines heeft geplaatst (eventueel via GitHub Classroom).
+ \item Er kunnen zich geen "verboden" documenten, zoals leerstof of vorige examens, op de virtuele machines bevinden. Enkel de documenten die de docent op de machines heeft geplaatst (eventueel via GitHub Classroom).
 \end{itemize}
+
+\subsubsection{Nadelen van virtualisatie}
+
+\begin{itemize}
+	\item Deze manier van werken is duur. Via de Microsoft Azure calculator heb ik het volgende berekend: een examen OOPII, dat 3 uur duurt, kost 32.88\$ voor een klas van 40 studenten. Dit is puur voor die machines tijdens het examen, zonder support. Maar, ondanks het feit dat het heel moeilijk is om de totale prijs per computer per examen met het hudige netsupport school systeem te berekenen, mogen we er vanuit gaan dat de prijs van virtualisatie wel een significant stuk lager ligt dan het huidige systeem aangezien je slechts per seconde betaalt en geen netsupport licenties moet betalen. 
+	\item Ik ben met reden niet te diep op die virtualisatie ingegaan, deze manier van werken zorgt voor een veel te significant veiligheidsprobleem. Al hetgeen een student binnen een virtuele machine doet is beveiligd. Maar niets houdt een student tegen om zaken op te zoeken op zijn eigen systeem tijdens het examen. Om te monitoren of een student niet op zijn eigen systeem bezig zijn kan je wel software installeren, maar dan valt deze methode van werken terug buiten de scope. De enigste controle hierop is een virtuele controle, die is alles behalve waterdicht en de effici\"entie hangt van lector tot lector af. Dit systeem is volgens mij bijna even onveilig als een student het examen te laten maken op eigen laptop zonder virtualisatie (dus zonder een gelimiteerd netwerk en zonder controle van documenten waar de student toegang tot heeft).  
+	
+\end{itemize}
+
 \section{GitHub Classroom}
 \label{sec:GHC}
 
