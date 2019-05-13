@@ -90,15 +90,20 @@ Naast fraude zijn er andere aandachtspunten bij het afnemen van examens op eigen
     
 \section{BYOD Systemen}
 
-Het invoeren van BYOD examens kan op verschillende manieren. Daarom is er in samenspraak met Bert Van Vreckem een scope vastgesteld voor dit onderzoek. De implementatie van BYOD examens moet hetzelfde zijn en mogelijk zijn voor de 3 meest gangbare besuringssystemen (Linux, MacOs en Windows) en het is niet de bedoeling, dat een student specifieke software moet installeren (voor monitoring of internet filtering e.d.). Deze scope limiteert het aantal mogelijke implementaties. In dit onderzoek bekijken we 4 manieren om BYOD examens te faciliteren, namelijk:
+Het invoeren van BYOD examens kan op verschillende manieren. Daarom is er in samenspraak met Bert Van Vreckem een scope vastgesteld voor dit onderzoek. De implementatie van BYOD examens moet hetzelfde zijn en mogelijk zijn voor de 3 meest gangbare besuringssystemen (Linux, MacOs en Windows) en het is niet de bedoeling, dat een student specifieke software moet installeren (voor monitoring of internet filtering e.d.). Deze scope limiteert het aantal mogelijke implementaties. In dit onderzoek bekijken we 2 manieren om BYOD examens te faciliteren, namelijk:
 
-\begin{itemize}
-\item Safe Exam Browser 
-\item Televic AssessmentQ / AVIDAnet Lite
+\begin{itemize} 
 \item Desktop virtualisatie via een cloudprovider
-\item Beveiligde, configureerbare netwerkomgeving om internettoegang tot niet-toegestane sites vanop laptops te vermijden	
+\item Beveiligde, configureerbare netwerkomgeving om internettoegang tot niet-toegestane sites vanop laptops tegen te gaan.	
 \end{itemize}
 
+Er werden nog 2 manieren gesuggereerd door Bert Van Vreckem. namelijk:  
+\begin{itemize}
+	\item Safe Exam Browser 
+	\item Televic AssessmentQ / AVIDAnet Lite
+\end{itemize}
+
+Na wat onderzoek te doen hierrond bleek dat deze out of scope vielen. Deze zijn enkel bruikbaar voor examens die louter uit vragenlijsten bestaan af te nemen. En voor beiden is er een extra programma nodig dat op de laptop van de student geinstlleerd zou moeten worden. Bij een safe exam browser moet er buiten de browser zelf ook nog een kiosk-applicatie geinstalleerd worden, die bepaalde systeemfuncties kan blokkeren tijdens een examen \autocite{SEB2019}. Kiosk software is een omvattende term voor software waarbij het systeem afgeschermd is van interactie door gebruikers binnen een bepaalde scope \autocite{Kio2009}. Televic assessmentQ maakt op zijn beurt gebruik van dergelijke Safe Exam Browser, die op dezelfde manier werkt \autocite{Tele2019}. 
 
 %Je verwijst bij elke bewering die je doet, vakterm die je introduceert, enz. naar je bronnen. In \LaTeX{} kan dat met het commando \texttt{$\backslash${textcite\{\}}} of \texttt{$\backslash${autocite\{\}}}. Als argument van het commando geef je de ``sleutel'' van een ``record'' in een bibliografische databank in het Bib\TeX{}-formaat (een tekstbestand). Als je expliciet naar de auteur verwijst in de zin, gebruik je \texttt{$\backslash${}textcite\{\}}.
 %Soms wil je de auteur niet expliciet vernoemen, dan gebruik je \texttt{$\backslash${}autocite\{\}}. In de volgende paragraaf een voorbeeld van elk.
