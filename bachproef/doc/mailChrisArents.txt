@@ -1,0 +1,28 @@
+Dag Benoit
+Systeembeheer:
+Naar beheer toe moet er telkens er een nieuwe versie uitkomt een andere package  geschreven worden. Een nadeel hierbij is dat je organisatie al iemand moet hebben die dit onder de knie heeft en dat er niet altijd voldoende tijd geïnvesteerd wordt in het vooraf uittesten van de package.
+Nadeel is het uitsluiten van fraude. Je kan heel veel uit zetten maar niet echt alles. Internet kan uitgezet worden maar de netwerkschijven gekoppeld aan de studenten is nog steeds een probleem. Gelukkig weten de studenten dit niet.
+ 
+Lesgever:
+Er moeten enkel scripts geschreven worden voor het uitpakken van je materiaal. Je kan de examens hiermee ook terug ophalen op de lectoren pc of op een server. Hiervoor dienen dan weer mappen gemaakt te worden met rechten. Vroeger werd dit door de systeembeheerders gedaan. Momenteel is dit de taak van de docent geworden.
+ 
+Hopelijk is dit een antwoord op je vraag.
+ 
+ 
+Met vriendelijke groeten
+Chris Arents
+Praktijklector
+---------------------------------------------------------
+
+https://www.hogent.be/www/assets/Image/logo2018.png
+
+Hogeschool Gent
+faculteit Natuur en Techniek - faculteit Bedrijf en Organisatie
+Postvakje N°13, lokaal GSCH.B.1.005 b (docentenruimte)
+
+Campus Schoonmeersen (FNT&FBO)
+Valentin Vaerwyckweg 1 (auto) - Voskenslaan 270 (te voet)
+
+
+chris.arents@hogent.be
+HoGent.be
