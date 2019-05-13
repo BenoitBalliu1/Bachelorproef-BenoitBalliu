@@ -105,10 +105,20 @@ Er werden nog 2 manieren gesuggereerd door Bert Van Vreckem. namelijk:
 
 Na wat onderzoek te doen hierrond bleek dat deze out of scope vielen. Deze zijn enkel bruikbaar voor examens die louter uit vragenlijsten bestaan af te nemen. En voor beiden is er een extra programma nodig dat op de laptop van de student geinstlleerd zou moeten worden. Bij een safe exam browser moet er buiten de browser zelf ook nog een kiosk-applicatie geinstalleerd worden, die bepaalde systeemfuncties kan blokkeren tijdens een examen \autocite{SEB2019}. Kiosk software is een omvattende term voor software waarbij het systeem afgeschermd is van interactie door gebruikers binnen een bepaalde scope \autocite{Kio2009}. Televic assessmentQ maakt op zijn beurt gebruik van dergelijke Safe Exam Browser, die op dezelfde manier werkt \autocite{Tele2019}. 
 
-%Je verwijst bij elke bewering die je doet, vakterm die je introduceert, enz. naar je bronnen. In \LaTeX{} kan dat met het commando \texttt{$\backslash${textcite\{\}}} of \texttt{$\backslash${autocite\{\}}}. Als argument van het commando geef je de ``sleutel'' van een ``record'' in een bibliografische databank in het Bib\TeX{}-formaat (een tekstbestand). Als je expliciet naar de auteur verwijst in de zin, gebruik je \texttt{$\backslash${}textcite\{\}}.
-%Soms wil je de auteur niet expliciet vernoemen, dan gebruik je \texttt{$\backslash${}autocite\{\}}. In de volgende paragraaf een voorbeeld van elk.
+\subsection{Desktopvirtualisatie via een cloudprovider}
 
-%\textcite{Knuth1998} schreef een van de standaardwerken over sorteer- en zoekalgoritmen. Experten zijn het erover eens dat cloud computing een interessante opportuniteit vormen, zowel voor gebruikers als voor dienstverleners op vlak van informatietechnologie~\autocite{Creeger2009}.
+\subsubsection{Werkwijze}
+Een lector bouwt een examen-image vanaf een template, die  installeert op dergelijke template de nodige software voor het examen, plaatst de nodige files op het systeem (GitHub Classroom) en test of alles werkt.  Daarna wordt er via een tool (Packer e.d.) een image van die machine gemaakt.  Bij aanvang van het examen vraagt elke student een kopie van die virtuele machine aan via een cloudprovider (Amazon AWS, Microsoft Azure e.d.) met credentials die door de school aangeleverd worden. De lector kan via de firewallinstellingen ook beslissen of de studenten op het internet mogen en zoja welke sites ze mogen bezoeken. Wanneer ze toegang tot hun persoonlijke machine gekregen hebben krijgen ze, zoals bij een normaal examen, tijd om de vragent te beantwoorden. Wanneer ze daarmee klaar zijn kunnen ze hun examen via GitHub Classroom indienen en wordt de machine terug verwijderd. 
 
+\subsubsection{Voordelen}
 
+De voordelen van GitHub Classroom worden hier niet besproken, daarover kan u in de \hyperref[sec:GHC]{volgende sectie} lezen.
+\begin{itemize}
+ \item Alle virtuele machines beginnen in dezelfde staat, zo ben je zeker dat elke student tijdig kan beginnen en geen software problemen zal tegenkomen (indien de machines juist geconfigureerd zijn door de lector). 
+ \item Dankzij centraal management bij de cloud provider kan toegang tot het netwerk voor studenten heel makkelijk afgeschermd of gelimiteerd worden.
+ \item  De machines worden enkel tijdens het examen gebruikt en brengen buiten tijdens het examen geen kosten met zich mee. 
+ \item Er kunnen zich geen verboden documenten op de virtuele machines bevinden. Enkel de documenten die de docent op de machines heeft geplaatst (eventueel via GitHub Classroom).
+\end{itemize}
+\section{GitHub Classroom}
+\label{sec:GHC}
 
