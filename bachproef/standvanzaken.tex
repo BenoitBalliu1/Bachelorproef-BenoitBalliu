@@ -157,9 +157,28 @@ De voordelen van GitHub Classroom worden hier niet besproken, daarover kan u in 
 
 	\begin{figure}
 	\includegraphics[width=\linewidth]{img/OpstellingNWOMG}
-	\caption{Voorbeeld opstelling van een beveiligde netwerkomgeving}
+	\caption{Voorbeeld opstelling van een beveiligde netwerkomgeving (met lokale examenserver)}
 	\label{fig:Omgeving1}
 \end{figure}
+
+\subsubsection{Omschrijving}
+Deze beveiligde kan snel opgezet en geconfigureerd worden voor een examen. Ze bestaat uit:
+\begin{itemize}
+\item Een wireless Acces Point
+\item Een router (Verbonden met het internet)
+\item Een firewall
+\item Een DNS server
+\item Een DHCP server
+\item Een examenserver (binnen of buiten het lokale netwerk)
+
+\end{itemize}
+Opmerking: dit hoeven geen 5 aparte servers/apparaten te zijn. Het wordt zo voorgesteld om duidelijker te zijn.
+
+Concreet is het de bedoeling dat er voor elke student een single use login is. Met deze kunnen ze verbinden met het netwerk via de wireless access point. Wanneer ze toegang tot het netwerk hebben kunnen ze het examen van de server halen (SFTP-server, Gitserver, webserver) en na het examen terug indienen. Damkzij de instellingen op de DNS server kunnen de studenten enkel aan websites waartoe ze toegang krijgen van de lectoren. Via de firewall worden verbinden met andere DNS servers of andere soorten servers ook geblokkeerd. Zo is het ook niet mogelijk voor studenten om de DNS Server te omzeilen of een VPN verbinding te maken en zo de controle te omzeilen. Er wordt ook concreet gemonitord of de student niet met een ander netwerk zou verbinden (Persoonlijke hotspot op GSM of HGSecure) door monitoring op de access point. De lectoren zullen een visuele controle moeten uitvoeren om te kijken of de student geen extra netwerkadaptor aangesloten heeft. 
+
+Op deze manier ben je zeker dat een student geen fraude via het internet kan plegen, wanneer de omgeving juist gefonfigureerd is.
+
+
 \section{GitHub Classroom}
 \label{sec:GHC}
 
