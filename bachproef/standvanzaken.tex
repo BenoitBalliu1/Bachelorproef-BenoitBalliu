@@ -7,7 +7,7 @@
 
 % Pas na deze inleidende paragraaf komt de eerste sectiehoofding.
 
-Voor er onderzoek gedaan wordt naar oplossing voor examens op eigen computer moet er gekeken worden naar de huidige situatie op de Hogeschool Gent en hoe andere instellingen deze probleemstelling aanpakken. 
+Voor er onderzoek gedaan wordt naar oplossing voor examens op eigen computer moet er gekeken worden naar de huidige situatie op de Hogeschool Gent. Het is ook belangrijk te kijken wat eer achter het buzzword BYOD zit en welke BYOD oplossingen er momenteel op de markt zijn. 
 %Dit hoofdstuk bevat je literatuurstudie. De inhoud gaat verder op de inleiding, maar zal het onderwerp van de bachelorproef *diepgaand* uitspitten. De bedoeling is dat de lezer na lezing van dit hoofdstuk helemaal op de hoogte is van de huidige stand van zaken (state-of-the-art) in het onderzoeksdomein. Iemand die niet vertrouwd is met het onderwerp, weet er nu voldoende om de rest van het verhaal te kunnen volgen, zonder dat die er nog andere informatie moet over opzoeken \autocite{Pollefliet2011}.
 
 \section{Examens op Hogeschool Gent}
@@ -43,18 +43,29 @@ Wanneer er enkel toegang tot een webbrowser vereist is (Test op chamilo, Online-
 \subsubsection{Omschrijving van het huidige systeem}
 In het huidige systeem beschikt de Hogeschool Gent over een groot aantal windows machines. Op elke machine kan elk examen uitgevoerd worden, dit houdt in dat er zo'n 180 softwarepaketten (over alle richtingen heen) onderhouden moeten worden door de systeembeheerders. Elke computer moet ook gelicensieerd zijn voor de netsupport school software, per computerlokaal staat er ook 1 admincomputer. Deze wordt gerbuikt om studenten tijdens een examen te monitoren, om beperkingen voor de studenten in te stellen, om examendocumenten op de computer te plaatsen en ze na het examen terug van te halen. Netsupport school zorgt concreet voor een beveiligde en gemonitorde omgeving voor studenten om hun examen af te leggen. 
 
+
+
+\begin{figure}
+\includegraphics[width=\linewidth]{img/NetsupportAdmin.png}
+\caption{Scherm op de admincomputer van een netsupport school-omgeving}
+\label{fig:NetSupport1}
+\end{figure}
+
+
 \subsubsection{Tekortkomingen}
 
 
-\paragraph{Tekortkomingen volgens docenten}
+\paragraph{Tekortkomingen volgens een lector}
 
 Deze paragraaf is gebaseerd op een interview met lector Heidi Roobrouck \autocite{Roobrouck2019}. Het huidige systeem bevat volgens lector H. Roobrouck meerdere tekortkomingen. De lectoren hebben er te veel werk aan. Ze moeten lang op voorhand doorgeven welk examen er wanneer zal doorgaan en welke software er daarvoor nodig is. Maar zelf sdan loopt het af en toe nog mis, cfr. examen webapplicaties III 2018-2019, toen moest dat examen naar het einde van de examenperiode uitgesteld worden omdat de verkeerde versie van de IDE geinstalleerd was.
 
-Indien het klaarzetten van de software goed verloopt, moeten de lectoren toch nog extra werk doen. Op voorhand testen ze de omgeving, en op de dag van het examen zelf zijn ze tot 1.5 uur bezig voor het examen, om alle files op de juiste locatie te plaatsen met netsupport school en om te controleren of dit overal gelukt is. De student krijgt tijdens het examen instructies om zijn examen correct in te dienen. Bijvoorbeeld map met bepaalde naam met daarin document met bepaalde naam. Dit moet exact zijn. Volgens lector H. Roobrouck loopt het digitaal ophalen van de examens in 5\% tot 7.5\% van de gevallen fout (Bij een klas van 40 studenten).
-Dan moet er manueel langs de computers langsgegaan worden om de benaming in order te brengen. Na dit het afhalen van de examens moeten alle files die aangemaakt zijn door en voor een student ook nog eens verwijderd worden. 
+Indien het klaarzetten van de software goed verloopt, moeten de lectoren toch nog extra werk doen. Op voorhand testen ze de omgeving, en op de dag van het examen zelf zijn ze tot 1.5 uur bezig voor het examen, om alle files op de juiste locatie te plaatsen met netsupport school en om te controleren of dit overal gelukt is. De student krijgt tijdens het examen instructies om zijn examen correct in te dienen. Bijvoorbeeld plaats het document met een bepaalde naam in een map met bepaalde naam. Dit moet exact zijn en er is geen ruimte voor fouten (hoofd- of kleine letter, underscore of koppelteken). Volgens lector H. Roobrouck loopt het digitaal ophalen van de examens in 5\% tot 7.5\% van de gevallen fout (Bij een klas van 40 studenten).
+Dan moet er manueel langs de computers langsgegaan worden om de benaming in order te brengen. Na dit het afhalen van de examens moeten alle files die aangemaakt zijn door en voor een student ook nog eens verwijderd worden. Dit kan tot 3 uur na een examen duren.  
+
+Lector H. Roobrouck zou ze met het nieuwe examensysteem zeker het gebruik van internet moeten kunnen beheren en communicatie tussen studenten tegenhouden. Liefst van al zou ze ook de studenten verbieden om lokaal op hun laptop naar documenten te kijken. Het huidige systeem zou vooral gemoderniseerd moeten worden, waardoor de lectoren er minder werk aan hebben, en waardoor de studenten zelf verantwoodelijk zijn voor het indienen van hun examen. 
 
 
-\paragraph{Tekortkomingen volgens systeembeheerds}
+\paragraph{Tekortkomingen volgens een systeembeheerder}
 Hier volgen de problemen die ex-systeembeheerder Christ Arents aanhaalde \autocite{Arents2019}. De lectoren zijn niet genoeg opgeleid en hebben daardoor vaak te weinig verstand van hoe alles werkt. Dit zorgt voor vele extra werk voor de lectoren. 
 
 Langs de kant van het systeembeheer zijn er ook meerdere klachten. Het deployen van nieuwe softwarepaketten wordt niet gedaan door iemand die daar fulltime mee bezig is. Het schrijven van SCCM paketten zou enkel door een ervaren iemand gedaan mogen worden.  Door de huidige situatie krijg je soms verkeerd geconfigureerde software op de dag van het examen en moeten examens uitgesteld worden. Er wordt te weinig getest. Fouten met software zouden vermeden moeten worden. 
@@ -178,8 +189,25 @@ Concreet is het de bedoeling dat er voor elke student een single use login is. M
 
 Op deze manier ben je zeker dat een student geen fraude via het internet kan plegen, wanneer de omgeving juist gefonfigureerd is.
 
+Dit brengt toch enkele opmerkingen met zich mee. Zo kun je niet vermijden dat studenten documenten op hun eigen laptop kunnen bekijken. Volgens lector H. Roobrouck zou dit een breekpunt voor het nieuw examensysteem kunnen zijn. Een examen moet in de lijn van de oefeningen die tijdens het jaar gamaakt zijn liggen, en toegant tot die reeds gemaakte oefeningen op het examen zou een te groot voordeel bieden. 
+
+
+
 
 \section{GitHub Classroom}
 \label{sec:GHC}
 
+GitHub classroom is een product van GitHub. Het is hun oplossing voor code-management bij taken of examens. Momenteel wordt het reeds gebruikt voor projecten (Projecten III) en enkele vakken (Enterprise Linux, Onderzoekstechnieken) op Hogeschool Gent. Het zou perfect voor examens gebruikt kunnen worden, al moeten we er wel rekening mee houden dat er geen lokale GitHub classroom servers opgezet kunnen worden. Dit kan een breekpunt zijn voor security, omdat je over het publieke internet gevoelige documenten vestuurt. Maar wanneer dit op een correcte en veilige manier gebeurt (Via SSH of HTTPS), kan het meeste van het gevaar die deze methode met zich meebrengt vermeden worden. 
 
+Met GitHub classroom kan een lector de starterscode van een examens (Bijvoorbeeld OOPII) in een repository plaatsen. Elke student kan dan een kopie binnenhalen bij de start van het examen en tijdens het examen na bepaalde milestones committen wat back ups en version control te hebben. Bij elke commit kan er via CD/VI pipelines getest worden, bijvoorbeeld of de code compileert, of er in de code aan bepaalde vereisten voldaan is (Gebruik van commando's, compilatietijd e.d.). 
+
+Met GitHub classroom zouden we het huidige systeem met Micorsoft Word, waarbij er code in een Word document geplakt wordt, om later afgedrukt en verbeterd te worden door een docent \autocite{Roobrouck2019}, veel effici\"{e}nter kunnen maken en echt moderniseren. Het huidige systeem wacht hier al langer op. 
+\newpage 
+
+\section{Conclusie}
+
+Het enigste BYOD Systeem uit deze selectie dat het onderzoeken waard is, is de beveiligde netwerkomgeving. Het voeldoet niet aan alle requirements, maar het voldoet wel aan de meeste. Het biedt geen mogelijkheid tot controle over documenten, maar wel over internetgebruik en doccunicatie tussen studenten.
+
+ Televic Avidanet Lite / AssessmentQ en Safe exam browser vielen al snel af omdat ze kiosk-software met zich meebrengen. Desktopvirtualisatie zonder een soort kiosk-software biedt helemaal geen veiligheid of controle. 
+
+In het volgende hoofdstuk kan u lezen hoe ik met deze informatie aan de slag gegaan ben om een Proof of concept op te stellen. 
