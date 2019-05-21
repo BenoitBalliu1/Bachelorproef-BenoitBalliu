@@ -11,5 +11,37 @@
 %% mogelijke manier toegepast hebt om een antwoord te vinden op de
 %% onderzoeksvraag.
 
-\lipsum[21-25]
 
+\section{Voorbereiding van het onderzoek}
+In het begin van dit onderzoek is er een scope vastgelegd in samenspraak met Bert Van Vreckem. Namelijk dat er in geen enkel geval software op de laptops ge\"{\i}nstalleerd mag worden voor het BYOD systeem. Toen bracht hij de suggestie van een beveiligde netwerkomgeving reeds op en gaf hier duiding bij. De opstelling van de beveiligde omgeving is in dit onderzoek gebaseerd op mondelinge feedback door Bert Van Vreckem. Later stelde meneer Van Vreckem de andere BYOD systemen ook nog voor, deze zijn ook opgenomen in het onderzoek.
+
+\section{Onderzoek}
+
+
+De eerstvolgende stap was onderzoeken wat het huidige systeem is, en op welke plaatsen er verbeteringen nodig zijn. Daarvoor is er een interview opgesteld. Dit interview is bij 2 docenten en 1  systeembeheerder afgenomen. Met de informatie die vergaard werd uit die interviews is beslist wat de optimale oplossing is voor de huidige probleemstelling.
+
+Daarna is er onderzoek gedaan naar de opstelling van die beveiligde netwerkomgeving. Onderzoek naar Hardware, Software en hoe deze voor de proof of concept opgezet zou worden. Al snel bleek dat een gevirtualiseerde opstelling meer haalbaar was dan een fysieke omgeving. De gevirtualiseerde omgeving is opgezet met GNS3. 
+
+\subsection{GNS3}
+GNS3 ofwel Graphical Network Simulator 3 is een network software emulator. Deze software staat toe om virtuele en fysieke devices met elkaar te verbinden om zo complexe netwerken te simuleren. GNS3 kan virtuele machines van VMWare, VirtualBox of KVM gewoon importeren en routeren. Dankzij GNS3 was het testen van een opstelling tijdens het onderzoek een stuk makkelijker en kon het opstellen van een proof of concept versneld worden.
+
+\subsubsection{Tekortkoming}
+Wireless access points zijn niet ondersteund binnen GNS3. Voor de proof of concept is er dus gebruik gemaakt van een opstelling met wired connections. In de realiteit verkiezen we dus wireless access omdat niet alle moderne laptops nog een ethernetpport hebben.   
+
+\subsection{Open-source software}
+Omdat de opstelling open-source moest blijven is er voor de opstelling enkel naar open source netwerk operating systems/software gekeken. Onder andere:
+\begin{itemize}	
+	\item pfSense: Open-source operating system gebaseerd op FreeBSD. Router/firewall.
+	\item OpenWrt: Open-source Linux operating system. Volledige netwerk oplossing. 
+	\item dnsmasq: Open-source Unix-like operating system. DNS forwarder en DHCP Server.
+\end{itemize}
+
+\subsection{VMWare}
+Om de virtualisatie van niet-netwerk apparaten, zoals end devices te faciliteren is er gebruik gemaakt van VMWare. Gebruik van Virtualbox of een KVM Server is ook mogelijk maar er is gekozen voor VMWare door personal preference. 
+
+\subsection{Automatisatie}
+
+Om het opstellen van dergelijke omgeving zo simpel mogelijk te maken heb ik ervoor gekozen om een groot stuk te automatiseren d.m.v. Ansible. Ansible is Agentless SSH automation. Dit wil zeggen dat er op de nodes die je beheert met ansible geen speciale software moeten draaien, enkel een OpenSSH server, deze is standaard geinstalleerd om de meeste systemen. Met Ansible en haar netwerk modules kan je makkelijk volledige netwerkomgeivngen opzetten zonder zelf aan de command-line interface te moeten komen. 
+
+\section{Proof of concept}
+Na het configureren van enkele opstellingen is er \'{e}\'{e}n uitgekozen. Degene die het makkelijkst was om op te zetten en het meest simpel om te  configureren. Daarover kan u in het volgende hoofdstuk lezen.
