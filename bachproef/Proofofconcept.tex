@@ -54,6 +54,27 @@ Wanneer studenten toch websites mogen bezoeken zoals bijvoorbeeld de java api, m
 \subsection{Gitlab}
 Gebruikers worden in deze proof-of-concept via de Gitlab API toegevoegd met Ansible. Wanneer de docent gebruikers aanlevert in een .csv bestand, dan leest Ansible die uit en voegt ze toe aan de Gitlab server. 
 
+Dit is de Ansible taak die per student in die .csv file uitgevoerd wordt. De waarden die tussen: "\{\{\}\}"   staan, zijn variabelen die per student verschillend zijn.
+\lstset{basicstyle=\ttfamily}
+\begin{lstlisting}
+-  name: Create Gitlab User
+	gitlab_user:
+		server_url: https://gitlabsrv01.benoitballiu.be
+		validate_certs: True
+		api_username: admin
+		api_password: $encrypted$
+		group: "{{ group }}"
+		access_level: developer
+		name: "{{ studentName }}"
+		username: "{{ username }}"
+		email: "{{ studentEmail }}"
+		password: dummypassword
+		state: present
+	delegate_to: localhost
+\end{lstlisting}
+
+Het volledige Ansible Playbook kan u in de bijlagen terugvinden.
+
 \section{Verloop van een examen}
 Deze sectie geeft meer uitleg over de verloop van een BYOD-examen met deze opstelling.
 
