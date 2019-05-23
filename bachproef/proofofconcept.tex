@@ -57,4 +57,15 @@ Gebruikers worden in deze proof-of-concept via de Gitlab API toegevoegd met Ansi
 \section{Verloop van een examen}
 Deze sectie geeft meer uitleg over de verloop van een BYOD-examen met deze opstelling.
 
+\begin{itemize}
+	\item De lector bereidt een examen voor door Ansible users te laten toevoegen en url's te laten whitelisten.
+	\item De lector kan op de adminmachine testen of de studenten enkel aan de toegestane url's kunnen.
+	\item De lector voegt zijn project toe aan Gitlab en voegt users toe aan Gitlab met Ansible
+	\item Wanneer de studenten binnenkomen forken ze hun eigen private repository van het examenproject
+	\item Tijdens het examen kunnen de studenten reeds pushen naar hun repository. Op het einde van het examen controleert de student of zijn oplossing correct op github staat.
+	\item De Lector kan nu alle repositories van de studenten binnenhalen en verbeteren.
+\end{itemize}
+
+
+
 
