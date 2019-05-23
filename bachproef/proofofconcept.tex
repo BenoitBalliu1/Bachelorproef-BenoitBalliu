@@ -1,2 +1,60 @@
 \chapter{Proof of concept}
 \label{ch:proofofconcept}
+
+
+
+\section{Opstelling}
+
+De opstelling van de  proof of concept, die u terug kan vinden op \hyperref[fig:Poc1]{figuur 4.1}, bestaat uit:
+\begin{itemize}
+	\item pfSense router en firewall
+	\item CentOS server met een dnsmasq DNS en DHCP Server
+	\item CentOS server met Gitlab Community Edition ge\"{\i}nstalleerd.
+	\item Switch
+	\item End devices (laptops)
+\end{itemize}
+
+Opmerking: bij gebrek aan ondersteuning van open-source Wireless Access Points binnen GNS3, zijn de laptops van de studenten bedraad verbonden met het netwerk. Bij een echte opstelling is het de bedoeling dat er een Captive Portal geconfigureerd wordt op de pfSense Router zodat enkel studenten met toestemming kunnen verbinden. PfSense routers ondersteunen o.a. LDAP Authenticatie, waarmee je gebruikers met hun Microsoft Active Directory Account kan authenticeren om in te loggen op het netwerk.   
+	
+\begin{figure}
+	\includegraphics[width=\linewidth]{img/gns3FinalPoC.jpg}
+	\caption{Opstelling voorgesteld in GNS3}
+	\label{fig:PoC1}
+\end{figure}
+
+\subsection{Functionaliteiten}
+
+Hier volgt een opsomming van alle functionaliteiten die een dergelijke opstelling bevat.
+
+\begin{itemize}
+	\item Alle admin systemen zijn gehardened en beveiligd volgens een Baseline gebaseerd op de CIS Guidelines \autocite{Baseline2019}.
+	\item De het opzetten van de omgeving voor een examen wordt grotendeels door Ansible gedaan.
+	\item Het is simpel om de examenomgeving op te zetten voor een lector (dankzij Ansible). 
+	\item De studenten kunnen enkel browsen naar websites die toegestaan zijn door de lecoren.
+	\item Beveiliging op zowel de firewall en DNS zorgen ervoor dat studenten geen VPN-verbinding kunnen maken of een andere DNS Server kunnen gebruiken.
+	\item Studenten kunnen hun examen van de lokale Gitlab server halen en na het examen indienen via Gitlab
+	\item Er wordt gemonitord of studenten niet met andere netwerken verbinden.
+\end{itemize}
+
+\subsection{Functionaliteiten die ontbreken}
+
+Deze proof of concept is geen ideale oplossing voor het nieuwe examensysteem, het is wel de meest ideale oplossing binnen dit onderzoek.
+Toch blijft er een functionaliteit over die voor sommige examens een nice-to-have is en voor andere een must-have \autocite{Roobrouck2019}, namelijk: 
+
+Studenten hebben volledige toegang tot documenten op hun eigen laptop. Indien zij reeds gemaakte oefeningen, opgeloste voorbeeldexamens of vorige versies van examens bij zouden hebben, is het mogelijk dat zij een oneerlijk voordeel krijgen tegenover studenten die dit niet bijhebben. 
+
+ Volgens lector H. Roobrouck maakt het voor een examens zoals Object-Geori\"{e}nteerd Programmeren III minder uit vergeleken met Object-Geori\"{e}nteerd Programmeren I, waar het voor H. Roobrouck noodzakelijk is dat studenten geen toegang hebben tot alle oefeningen, bijvoorbeeld.
+
+\subsection{Automatisatie}
+Automatisatie gebeurt met Ansible. Ansible communiceert met de servers via SSH met 4096bit SSH keys. Het is niet mogelijk om op die servers met een wachtwoord in te loggen.
+
+\subsubsection{DNS \& Firewall}
+Wanneer studenten toch websites mogen bezoeken zoals bijvoorbeeld de java api, moet er een aanpassing gemaakt worden in DNS en Firewall. Wanneer de lector de URL van een site ingeeft bij het uitvoeren van de ansible playbook, worden de juiste aanpassingen gemaakt op beide servers.
+
+\subsection{Gitlab}
+Gebruikers worden in deze proof-of-concept via de Gitlab API toegevoegd met Ansible. Wanneer de docent gebruikers aanlevert in een .csv bestand, dan leest Ansible die uit en voegt ze toe aan de Gitlab server. 
+
+\section{Verloop van een examen}
+Deze sectie geeft meer uitleg over de verloop van een BYOD-examen met deze opstelling.
+
+
