@@ -13,11 +13,11 @@
 
 \section{Fasering}
 
-De rest van dit onderzoek is onderverdeeld in 3 stukken:
+De rest van dit onderzoek is uitgevoerd in 3 delen, namelijk: 
 \begin{itemize}
-	\item Onderzoek naar mogelijke oplossingen
-	\item Mogelijke opstellingen maken
-	\item Opstellen van een proof of concept
+	\item Eerst is er onderzocht welke oplossingen er reeds bestaan voor dergelijke systemen, en hoe dit best opgesteld wordt in de proof-of-concept.
+	\item Dan zijn er een aantal mogelijke opstellingen gemaakt en met elkaar vergeleken.
+	\item Uiteindelijk is er een proof-of-concept opgesteld, rekeninghoudend met de bevindingen uit de tweede fase.
 \end{itemize}
 
 \section{Onderzoek naar mogelijke oplossingen}
@@ -47,7 +47,13 @@ Omdat de opstelling open-source moest blijven is er voor de opstelling enkel naa
 Om het opstellen van dergelijke omgeving zo simpel mogelijk te maken is er gekozen om een groot stuk te automatiseren d.m.v. Ansible. Ansible is Agentless SSH automation. Dit wil zeggen dat er op de nodes die je beheert met ansible geen speciale software moeten draaien, enkel een OpenSSH server, deze is standaard geinstalleerd om de meeste systemen. Met Ansible en haar netwerk modules kan je makkelijk volledige netwerkomgeivngen opzetten zonder zelf aan de command-line interface te moeten komen. 
 
 \section{Mogelijke opstellingen maken}
-
+Voor er een goede finale opstelling opgezet kan worden moeten er een aantal opstellingen met elkaar vergeleken worden. Hier volgt een lijst van opstellingen die suboptimaal bleken na onderzoek:
+\begin{itemize}
+	\item \textbf{Opstelling waarbij de netwerkinfrastructuur uit ciscoapparatuur bestaat}. Na het opzetten van die opstelling in GNS3 bleek deze suboptimaal. Dergelijk systeem is heel erg duur en voor het beperkt aantal gebruikers dat op hetzelfde moment met de apparatuur moet verbinden zou cisco-infrastructuur overbodig zijn. Cisco levert enterprise-grade infrastructuur, in dit geval is die apparatuur overbodig. 
+	\item \textbf{Opstelling met OpenWRT router}. OpenWRT is gemaakt om op veel kleinere en minder krachtige apparaten te werken. Bij het opzetten van een OpenWRT omgeving was het duidelijk dat de configuratie van de router niet zo gerbuiksvriendelijk is. Aangezein het de bedoeling is dat lectoren zelf de omgeving beheren is het gebruik van OpenWRT niet aangeraden. 
+	\item \textbf{Opstelling met pfSense Router zonder Ansible}. Het gebruik van pfSense als router software maakt het opstekllen van de netwerkomgeving een stuk makkelijker. Het is nog steeds te veel gevraagd om lectoren die omgevingen zelf op te laten zetten, op bij het opzetten veel werk zelf te laten doen.  
+	 
+\end{itemize} 
 
 \section{Proof of concept}
-Na het configureren van enkele opstellingen is er \'{e}\'{e}n uitgekozen. Degene die het makkelijkst was om op te zetten en het meest simpel om te  configureren. Daarover kan u in het volgende hoofdstuk lezen.
+Na het configureren van die vorige opstellingen is er \'{e}\'{e}n uitgekozen, namelijk degene die het meeste voldoet aan de vastgestelde vereisten. Daarover kan u in het volgende hoofdstuk lezen.

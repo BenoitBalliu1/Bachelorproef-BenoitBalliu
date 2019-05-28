@@ -161,14 +161,14 @@ Deze problemen worden een stuk significanter wanneer de examens afgelegd worden 
     
 \section{BYOD Systemen}
 
-Het invoeren van BYOD examens kan op verschillende manieren. Daarom is er in samenspraak met Bert Van Vreckem een scope vastgesteld voor dit onderzoek. De implementatie van BYOD examens moet hetzelfde zijn voor de 3 meest gangbare besuringssystemen (Linux, MacOs en Windows) en het is niet de bedoeling, dat een student specifieke software moet installeren (voor monitoring of internet filtering e.d.). Deze scope limiteert het aantal mogelijke implementaties. In dit onderzoek bekijken we 2 manieren om BYOD examens te faciliteren, namelijk:
+Het invoeren van BYOD examens kan op verschillende manieren. Daarom is er een scope vastgesteld voor dit onderzoek. De implementatie van BYOD examens moet hetzelfde zijn voor de 3 meest gangbare besuringssystemen (Linux, MacOs en Windows) en het is niet de bedoeling, dat een student specifieke software moet installeren (voor monitoring of internet filtering e.d.). Deze scope limiteert het aantal mogelijke implementaties. In dit onderzoek bekijken we 2 manieren om BYOD examens te faciliteren, namelijk:
 
 \begin{itemize} 
 \item Desktop virtualisatie via een cloudprovider
 \item Beveiligde, configureerbare netwerkomgeving om internettoegang tot niet-toegestane sites vanop laptops tegen te gaan.	
 \end{itemize}
 
-Er werden verder nog 2 manieren gesuggereerd door Bert Van Vreckem. namelijk:  
+Er werden nog 2 manieren voorgesteld door een lector, namelijk:  
 \begin{itemize}
 	\item Safe Exam Browser 
 	\item Televic AssessmentQ / AVIDAnet Lite
@@ -195,7 +195,7 @@ De voordelen van GitHub Classroom worden hier niet besproken. Die kan u in de \h
 
 
 
-	 Deze manier van werken is duur. Volgens de Microsoft Azure calculator kost een examen OOPII, dat 3 uur duurt, 32.88\$ voor een klas van 40 studenten op virtuele machines met gelijkaardige specificaties als de huidige desktops. Dit is enkel de kost van die machines tijdens het examen, zonder support. Ondanks het feit dat het heel moeilijk is om de totale prijs per computer per examen met het hudige NetSupport School systeem te berekenen, kunnen we er vanuit gaan dat de prijs van virtualisatie wel een beduidend stuk lager ligt dan het huidige systeem, aangezien je slechts per seconde betaalt en geen netsupport licenties moet betalen. 
+	 Deze manier van werken is duur. Volgens de Microsoft Azure calculator kost een examen OOPII, dat 3 uur duurt, 32.88\$ voor een klas van 40 studenten op virtuele machines met gelijkaardige specificaties als de huidige desktops, dit is te zien op figuur \hyperref[fig:Calculator1]{2.2}. Dit is enkel de kost van die machines tijdens het examen, zonder support. Ondanks het feit dat het heel moeilijk is om de totale prijs per computer per examen met het hudige NetSupport School systeem te berekenen, kunnen we er vanuit gaan dat de prijs van virtualisatie wel een beduidend stuk lager ligt dan het huidige systeem, aangezien je slechts per seconde betaalt en geen netsupport licenties moet betalen. 
 	
 	In dit onderzoek werd niet te diep ingegaan op die virtualisatie. Deze manier van werken zorgt voor een veel te significant veiligheidsprobleem. Al hetgeen een student binnen een virtuele machine doet is beveiligd. Maar niets houdt een student tegen om zaken op te zoeken op zijn eigen systeem tijdens het examen. Om te monitoren of een student niet op zijn eigen systeem bezig is kan je wel software installeren, maar dan valt deze methode van werken terug buiten de scope. De enige controle hierop is een virtuele controle, die is alles behalve waterdicht en de effici\"entie hangt van lector tot lector af. Dit systeem is bijna even onveilig als een student het examen laten maken op de eigen laptop zonder virtualisatie. In combinatie met kiosk software, zou dit de ideale oplossing kunnen zijn, maar aangezien dit buiten de scope valt wordt hier niet verder op ingegaan.
 	
@@ -203,7 +203,7 @@ De voordelen van GitHub Classroom worden hier niet besproken. Die kan u in de \h
 	
 	\begin{figure}
 	\includegraphics[width=\linewidth]{img/AzCalc.PNG}
-	\caption{Screenshot van de Microsoft Azure Calculator. Hier kan je een kostenraming zien voor een computerexamen, voor één klas (40 studenten). Voor deze raming ben ik er vanuit gegaan dat de machines die aan de studenten gegeven worden over dezelfde systeemspecificaties beschikken als de huidige computers van Hogeschool Gent. Met deze configuratie zou een examen \$32.88 oftewel net geen 30 euro. Dit is de prijs zonder ondersteuning van Microsoft, en zonder de kost om een systeem met dergelijke virtualisatie op te zetten.}
+	\caption[Screenshot van de Microsoft Azure Calculator]{Screenshot van de Microsoft Azure Calculator}
 	\label{fig:Calculator1}
 \end{figure}
 
