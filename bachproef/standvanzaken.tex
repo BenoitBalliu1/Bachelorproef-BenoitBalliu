@@ -70,6 +70,53 @@ Hier volgen de problemen die een systeembeheerder van Hogeschool Gent aanhaalde.
 
 Aan de kant van het systeembeheer zijn er ook meerdere klachten. Het uitrollen van nieuwe softwarepaketten wordt niet gedaan door iemand die daar fulltime mee bezig is. Het schrijven van SCCM pakketten zou enkel door een ervaren iemand gedaan mogen worden.  Met het huidige systeen krijg je soms verkeerd geconfigureerde software op de dag van het examen en moeten examens uitgesteld worden. Er wordt te weinig getest. Fouten met software zouden vermeden moeten worden. 
 
+\subsection{Vereisten voor een examensysteem}
+
+Voor wer een nieuw examensysteem opgezet kan worden is het belangrijk om de vereisten hiervan in kaart te brengen. Hier alvast een lijst met mogelijke eigenschappen van een examensysteem: 
+	\begin{itemize}
+	\item Toegang tot het internet kan verboden worden.
+	\item Beperken van toegang tot documenten.
+	\item Beperken van toegang tot software.
+	\item Digitale communicatie met medestudenten is niet mogelijk.
+	\item Monitoring tijdens het examen.
+	\item Snel en makkelijk opzetten van examens. 
+	
+\end{itemize}	
+
+Uit deze lijst stellen via de MoSCoW-methode onze prioriteiten op. MoSCoW staat voor: must haves, should haves, could haves en won't haves. In samenspraak met de ge\"{i}nterviewden zijn de prioriteiten op deze manier vastgelegd. 
+
+	\begin{itemize}
+	\item Must haves
+		\begin{itemize}
+		\item Toegang tot het internet kan verboden worden.
+		\item Digitale communicatie met medestudenten is niet mogelijk.
+		\item Snel en makkelijk opzetten van examens. 
+		\item Beperken van toegang tot documenten.
+		
+	\end{itemize}	
+	\item Should haves
+		\begin{itemize}
+		\item Geen.
+	
+		
+	\end{itemize}	
+	\item Could haves
+		\begin{itemize}
+		\item Beperken van toegang tot software.
+		\item Monitoring tijdens het examen.
+		
+	\end{itemize}	
+	\item won't haves
+		\begin{itemize}
+		\item Geen.
+		
+	\end{itemize}	
+	\end{itemize}	
+
+Beperken van toegang tot documenten zou zowel bij must haves als shoud haves kunnen staan. Volgens een lector die computerexamens afneemt hangt het van examen tot examen af of toegang tot documenten beperkt moet worden. Vooral examens die afgelegd worden door eerstejaarsstudenten zouden volgens die lector zonder toegang tot alle mogelijke documenten op de laptop van de student afgenomen moeten kunnen worden. Aangezien het beperken van toegang tot documenten in sommige gevallen moet kunnen gebeuren, is er beslist om dit toch bij de must haves te plaatsen. 
+
+
+
 \section{BYOD}
 
 BYOD ofwel Bring Your Own Device is een term die de laatste jaren wel vaker opduikt. Door de overvloed van nieuwe apparaten en gadgets, die aan een rotvaart op de markt gebracht worden, is het voor vele bedrijven te duur om altijd mee te zijn met de meest actuele technologieën. De opkomst van BYOD zorgt voor een verschuiving van de overheadkosten, die het beheer van vele apparaten in het bedrijf met zich meebrengt, van het bedrijf naar de werknemers toe \autocite{Hong2016}.
@@ -147,16 +194,16 @@ De voordelen van GitHub Classroom worden hier niet besproken. Die kan u in de \h
 \subsubsection{Nadelen van virtualisatie}
 
 
-\begin{itemize}
-	\item Deze manier van werken is duur. Volgens de Microsoft Azure calculator kost een examen OOPII, dat 3 uur duurt, 32.88\$ voor een klas van 40 studenten op virtuele machines met gelijkaardige specificaties als de huidige desktops. Dit is enkel de kost van die machines tijdens het examen, zonder support. Ondanks het feit dat het heel moeilijk is om de totale prijs per computer per examen met het hudige NetSupport School systeem te berekenen, kunnen we er vanuit gaan dat de prijs van virtualisatie wel een beduidend stuk lager ligt dan het huidige systeem, aangezien je slechts per seconde betaalt en geen netsupport licenties moet betalen. 
+
+	 Deze manier van werken is duur. Volgens de Microsoft Azure calculator kost een examen OOPII, dat 3 uur duurt, 32.88\$ voor een klas van 40 studenten op virtuele machines met gelijkaardige specificaties als de huidige desktops. Dit is enkel de kost van die machines tijdens het examen, zonder support. Ondanks het feit dat het heel moeilijk is om de totale prijs per computer per examen met het hudige NetSupport School systeem te berekenen, kunnen we er vanuit gaan dat de prijs van virtualisatie wel een beduidend stuk lager ligt dan het huidige systeem, aangezien je slechts per seconde betaalt en geen netsupport licenties moet betalen. 
 	
-	\item In dit onderzoek werd niet te diep ingegaan op die virtualisatie. Deze manier van werken zorgt voor een veel te significant veiligheidsprobleem. Al hetgeen een student binnen een virtuele machine doet is beveiligd. Maar niets houdt een student tegen om zaken op te zoeken op zijn eigen systeem tijdens het examen. Om te monitoren of een student niet op zijn eigen systeem bezig is kan je wel software installeren, maar dan valt deze methode van werken terug buiten de scope. De enige controle hierop is een virtuele controle, die is alles behalve waterdicht en de effici\"entie hangt van lector tot lector af. Dit systeem is bijna even onveilig als een student het examen laten maken op de eigen laptop zonder virtualisatie. In combinatie met kiosk software, zou dit de ideale oplossing kunnen zijn, maar aangezien dit buiten de scope valt wordt hier niet verder op ingegaan.
+	In dit onderzoek werd niet te diep ingegaan op die virtualisatie. Deze manier van werken zorgt voor een veel te significant veiligheidsprobleem. Al hetgeen een student binnen een virtuele machine doet is beveiligd. Maar niets houdt een student tegen om zaken op te zoeken op zijn eigen systeem tijdens het examen. Om te monitoren of een student niet op zijn eigen systeem bezig is kan je wel software installeren, maar dan valt deze methode van werken terug buiten de scope. De enige controle hierop is een virtuele controle, die is alles behalve waterdicht en de effici\"entie hangt van lector tot lector af. Dit systeem is bijna even onveilig als een student het examen laten maken op de eigen laptop zonder virtualisatie. In combinatie met kiosk software, zou dit de ideale oplossing kunnen zijn, maar aangezien dit buiten de scope valt wordt hier niet verder op ingegaan.
 	
-\end{itemize}
+
 	
 	\begin{figure}
 	\includegraphics[width=\linewidth]{img/AzCalc.PNG}
-	\caption{Screenshot van de Microsoft Azure Calculator.}
+	\caption{Screenshot van de Microsoft Azure Calculator. Hier kan je een kostenraming zien voor een computerexamen, voor één klas (40 studenten). Voor deze raming ben ik er vanuit gegaan dat de machines die aan de studenten gegeven worden over dezelfde systeemspecificaties beschikken als de huidige computers van Hogeschool Gent. Met deze configuratie zou een examen \$32.88 oftewel net geen 30 euro. Dit is de prijs zonder ondersteuning van Microsoft, en zonder de kost om een systeem met dergelijke virtualisatie op te zetten.}
 	\label{fig:Calculator1}
 \end{figure}
 
@@ -168,28 +215,29 @@ De voordelen van GitHub Classroom worden hier niet besproken. Die kan u in de \h
 
 	\begin{figure}
 	\includegraphics[width=\linewidth]{img/OpstellingNWOMG}
-	\caption{Voorbeeld opstelling van een beveiligde netwerkomgeving (met lokale examenserver)}
+	\caption{Architectuurtekening van beveiligde netwerkomgeving (met lokale examenserver).}
 	\label{fig:Omgeving1}
 \end{figure}
 
 \subsubsection{Omschrijving}
-Deze beveiligde omgeving kan snel opgezet en geconfigureerd worden voor een examen. Ze bestaat uit:
+Dergelijke beveiligde omgeving kan snel opgezet en geconfigureerd worden voor een examen. Ze kan, bijvoorbeeld, bestaan uit:
 \begin{itemize}
 \item Een wireless Acces Point
 \item Een router (Verbonden met het internet)
 \item Een firewall
+\item Een Ethernetswitch 
 \item Een DNS server
 \item Een DHCP server
 \item Een examenserver (binnen of buiten het lokale netwerk)
 
 \end{itemize}
-Opmerking: dit hoeven geen 5 aparte servers/apparaten te zijn. Het wordt zo voorgesteld om duidelijker te zijn.
+Opmerking: dit hoeven geen 6 aparte servers/apparaten te zijn. Het wordt zo voorgesteld om duidelijker te zijn.
 
-Concreet is het de bedoeling dat er voor elke student een single use login is. Met deze kunnen ze verbinden met het netwerk via de wireless access point. Wanneer ze toegang tot het netwerk hebben kunnen ze het examen van de server halen (SFTP-server, Gitserver, webserver) en na het examen terug indienen. Dankzij de instellingen op de DNS server kunnen de studenten enkel aan websites waartoe ze toegang krijgen van de lectoren. Via de firewall wordt de verbinding met andere DNS servers of andere soorten servers ook geblokkeerd. Zo is het ook niet mogelijk voor studenten om de DNS server te omzeilen of om een VPN verbinding te maken en zo de controle te omzeilen. Er wordt ook concreet gemonitord of de student niet met een ander netwerk zou verbinden (Persoonlijke hotspot op GSM of HGSecure) door monitoring op de access point. De lectoren zullen een visuele controle moeten uitvoeren om te kijken of de student geen extra netwerkadaptor aangesloten heeft. 
+Concreet is het de bedoeling dat er met dit systeem voor elke student bij aanvang van elk examen een nieuwe single use login is, integratie met Microsoft Active Directory zou een meer effici\"{e}nte oplossing kunnen zijn hiervoor. Met deze kunnen ze verbinden met het netwerk via de wireless access point. Wanneer ze toegang tot het netwerk hebben kunnen ze het examen van de server halen (SFTP-server, Gitserver, webserver) en na het examen terug indienen. Dankzij de instellingen op de DNS server kunnen de studenten enkel aan websites waartoe ze toegang krijgen van de lectoren. Via de firewall wordt de verbinding met andere DNS servers of andere soorten servers ook geblokkeerd. Zo is het ook niet mogelijk voor studenten om de DNS server te omzeilen of om een VPN verbinding te maken en zo de controle te omzeilen. Er wordt ook concreet gemonitord of de student niet met een ander netwerk zou verbinden (Persoonlijke hotspot op GSM of HGSecure) door monitoring op de access point. De lectoren zullen een visuele controle moeten uitvoeren om te kijken of de student geen extra netwerkadaptor aangesloten heeft. 
 
 Op deze manier ben je zeker dat een student geen fraude via het internet kan plegen, wanneer de omgeving juist geconfigureerd is.
 
-Dit brengt toch enkele opmerkingen met zich mee. Zo kan je niet vermijden dat studenten documenten op hun eigen laptop kunnen bekijken. Volgens een lector van Hogeschool Gent zou dit een breekpunt voor het nieuw examensysteem kunnen zijn. Een examen moet in de lijn liggen van de oefeningen die tijdens het jaar gemaakt zijn. De toegang tot die reeds gemaakte oefeningen tijdens het examen zou een te groot voordeel bieden. 
+Dit is niet de beste oplossing, zo kan je niet vermijden dat studenten documenten op hun eigen laptop kunnen bekijken. Volgens een lector van Hogeschool Gent is dit een tekortkoming van het nieuwe systeem. Een examen moet in de lijn liggen van de oefeningen die tijdens het jaar gemaakt zijn. Toegang tot onder andere die reeds gemaakte oefeningen tijdens het examen zou een te groot voordeel bieden, net zoals toegang tot theorie (indien dit niet toegestaan is), cheat-sheets of opgeloste vorige versies van examens. 
 
 
 
@@ -199,7 +247,7 @@ Dit brengt toch enkele opmerkingen met zich mee. Zo kan je niet vermijden dat st
 
 GitHub classroom is een product van GitHub. Het is hun oplossing voor code-management bij taken of examens. Momenteel wordt het reeds gebruikt voor projecten (Projecten III) en enkele vakken (Enterprise Linux, Onderzoekstechnieken) op Hogeschool Gent. Het zou perfect voor examens gebruikt kunnen worden, al moeten we er wel rekening mee houden dat er geen lokale GitHub classroom servers opgezet kunnen worden. Dit kan een breekpunt zijn voor security, omdat je over het publieke internet gevoelige documenten vestuurt. Maar wanneer dit op een correcte en veilige manier gebeurt (Via SSH of HTTPS), kunnen de meeste  gevaren die deze methode met zich meebrengt vermeden worden. 
 
-Met GitHub classroom kan een lector de starterscode van een examen (bijvoorbeeld OOPII) in een repository plaatsen. Elke student kan dan een kopie binnenhalen bij de start van het examen en tijdens het examen na bepaalde mijlpalen committen om zo over back-ups en version control te beschkken. Bij elke commit kan er via CD/CI pipelines getest worden, bijvoorbeeld of de code compileert, of er in de code aan bepaalde vereisten voldaan werd (gebruik van commando's, compilatietijd e.d.). 
+Met GitHub classroom kan een lector de starterscode van een examen (bijvoorbeeld OOPII) in een repository plaatsen. Elke student kan dan een kopie binnenhalen bij de start van het examen en tijdens het examen na bepaalde mijlpalen committen om zo over back-ups en version control te beschikken. Bij elke commit kan er via CD/CI pipelines getest worden, bijvoorbeeld of de code compileert, of er in de code aan bepaalde vereisten voldaan werd (gebruik van commando's, compilatietijd e.d.). 
 
 Met GitHub classroom zouden we het huidige systeem met Micorsoft Word, waarbij er code in een Word document geplakt wordt - om later afgedrukt en verbeterd te worden door een lector - veel effici\"{e}nter kunnen maken.  
 \newpage 
