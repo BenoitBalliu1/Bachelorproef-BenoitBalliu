@@ -1,11 +1,11 @@
-\chapter{Proof of concept}
+\chapter{Proof-of-concept}
 \label{ch:proofofconcept}
 
 
 
 \section{Opstelling}
 
-De opstelling van de  proof of concept, die u terug kan vinden op \hyperref[fig:Poc1]{figuur 4.1}, bestaat uit:
+De opstelling van de  proof-of-concept, die u terug kan vinden op \hyperref[fig:Poc1]{figuur 4.1}, bestaat uit:
 \begin{itemize}
 	\item pfSense router en firewall
 	\item CentOS server met een dnsmasq DNS en DHCP Server
@@ -27,10 +27,10 @@ Opmerking: bij gebrek aan ondersteuning van open-source Wireless Access Points b
 Hier volgt een opsomming van alle functionaliteiten die een dergelijke opstelling bevat.
 
 \begin{itemize}
-	\item Alle admin systemen zijn gehardened en beveiligd volgens een Baseline gebaseerd op de CIS Guidelines.
-	\item De het opzetten van de omgeving voor een examen wordt grotendeels door Ansible gedaan.
-	\item Het is simpel om de examenomgeving op te zetten voor een lector (dankzij Ansible). 
-	\item De studenten kunnen enkel browsen naar websites die toegestaan zijn door de lecoren.
+	\item Alle admin systemen zijn beveiligd volgens een Baseline gebaseerd op de CIS Guidelines (Zie bijlage).
+	\item Het opzetten van de omgeving voor een examen wordt grotendeels door Ansible gedaan.
+	\item Een lector kan dankzij het gebruiksvriendelijke Ansible zijn examenomgeving vlot zelf configureren.
+	\item De studenten kunnen enkel browsen naar websites die toegestaan zijn door de lectoren.
 	\item Beveiliging op zowel de firewall en DNS zorgen ervoor dat studenten geen VPN-verbinding kunnen maken of een andere DNS Server kunnen gebruiken.
 	\item Studenten kunnen hun examen van de lokale Gitlab server halen en na het examen indienen via Gitlab
 	\item Er wordt gemonitord of studenten niet met andere netwerken verbinden.
@@ -38,10 +38,10 @@ Hier volgt een opsomming van alle functionaliteiten die een dergelijke opstellin
 
 \subsection{Ontbrekende functionaliteiten}
 
-Deze proof of concept is geen ideale oplossing voor het nieuwe examensysteem, het is wel de meest ideale oplossing binnen dit onderzoek.
+Deze proof-of-concept is geen ideale oplossing voor het nieuwe examensysteem, maar wel de best mogelijke oplossing binnen dit onderzoek.
 Toch blijft er een functionaliteit over die voor sommige examens een nice-to-have is en voor andere een must-have, namelijk: 
 
-Studenten hebben volledige toegang tot documenten op hun eigen laptop. Indien zij reeds gemaakte oefeningen, opgeloste voorbeeldexamens of vorige versies van examens bij zouden hebben, is het mogelijk dat zij een oneerlijk voordeel krijgen tegenover studenten die dit niet bijhebben. Volgens een lector die programmeerexamens afneemt, maakt dat voor examens zoals Object-Geori\"{e}nteerd Programmeren III minder uit vergeleken met Object-Geori\"{e}nteerd Programmeren I, waar het die lector noodzakelijk is dat studenten geen toegang hebben tot alle oefeningen, bijvoorbeeld.
+Studenten hebben volledige toegang tot documenten op hun eigen laptop. Indien zij reeds gemaakte oefeningen, opgeloste voorbeeldexamens of vorige versies van examens bij zouden hebben, is het mogelijk dat zij een oneerlijk voordeel krijgen tegenover andere studenten. Volgens een lector die programmeerexamens afneemt, maakt dat voor examens zoals "Object-Geori\"{e}nteerd Programmeren III" minder uit in vergelijking met "Object-Geori\"{e}nteerd Programmeren I", waarbij het voor die lector noodzakelijk is dat studenten geen toegang hebben tot alle oefeningen.
 
 \subsection{Automatisatie}
 Automatisatie gebeurt met Ansible. Ansible communiceert met de servers via SSH met 4096bit SSH keys. Het is niet mogelijk om op die servers met een wachtwoord in te loggen.
@@ -50,7 +50,7 @@ Automatisatie gebeurt met Ansible. Ansible communiceert met de servers via SSH m
 Wanneer studenten toch websites mogen bezoeken zoals bijvoorbeeld de java api, moet er een aanpassing gemaakt worden in DNS en Firewall. Wanneer de lector de URL van een site ingeeft bij het uitvoeren van de ansible playbook, worden de juiste aanpassingen gemaakt op beide servers.
 
 \subsection{Gitlab}
-Gebruikers worden in deze proof-of-concept via de Gitlab API toegevoegd met Ansible. Wanneer de docent gebruikers aanlevert in een .csv bestand, dan leest Ansible die uit en voegt ze toe aan de Gitlab server. 
+Gebruikers worden in deze proof-of-concept via de Gitlab API toegevoegd met Ansible. Wanneer de docent de gebruikers toevoegt in een .csv bestand, dan leest Ansible die uit en voegt ze toe aan de Gitlab server. 
 
 Dit is de Ansible taak die per student in die .csv file uitgevoerd wordt. De waarden die tussen: "\{\{\}\}"   staan, zijn variabelen die per student verschillend zijn.
 \lstset{basicstyle=\ttfamily}
@@ -79,7 +79,7 @@ Deze sectie geeft meer uitleg over BYOD-examen met deze opstelling, door een voo
 \subsection{Voorbeeld: Examen OOPII}
 
 \begin{itemize}
-	\item De lector bereidt de avond voor het examen of op de dag zelf het examen voor, door een een Ansible Playbook te doorlopen. Ansible zal zo users, studenten die het examen afleggen, toevoegen aan zowel de gitlabserver als de Captive portal van de router en, indien gewild, url's te whitelisten. Zie figuur \hyperref[fig:PoC2]{4.2}, dit is het scherm dat de lector invult. Zowel figuur \hyperref[fig:PoC3]{4.3} als figuur \hyperref[fig:PoC4]{4.4} voor een voorbeeld van de files die de lector moet invullen. 
+	\item De lector bereidt de avond voor het examen of op de dag zelf het examen voor, door een Ansible Playbook te doorlopen. Ansible zal zo users, studenten die het examen afleggen, toevoegen aan zowel de gitlabserver als de Captive portal van de router en, indien nodig, url's whitelisten. Zie figuur \hyperref[fig:PoC2]{4.2}, dit is het scherm waar de lector de locaties van de bestanden ingeeft. Zowel op figuur \hyperref[fig:PoC3]{4.3} als figuur \hyperref[fig:PoC4]{4.4} ziet men een voorbeeld van de in te vullen files. 
 
 	\begin{figure}[H]
 		\includegraphics[width=\linewidth]{img/AdminPC.png}
@@ -99,7 +99,7 @@ Deze sectie geeft meer uitleg over BYOD-examen met deze opstelling, door een voo
 	\label{fig:PoC4}
 \end{figure}
 
-	\item De lector kan op de adminmachine testen of de studenten enkel aan de toegestane url's kunnen.
+	\item De lector kan via de adminmachine testen of de studenten enkel aan de toegestane url's kunnen.
 	
 		\begin{figure}[H]
 		\includegraphics[width=\linewidth]{img/Linkblock1.png}
@@ -115,7 +115,7 @@ Deze sectie geeft meer uitleg over BYOD-examen met deze opstelling, door een voo
 	\item De lector voegt zijn project toe aan Gitlab. Dit kan hij manueel doen: 
 			\begin{figure}[H]
 		\includegraphics[width=\linewidth]{img/Git01.png}
-		\caption[Screenshot van het aanmaken van een git repository] {Hierboven zie je een screenshot waar een lector een nieuw repository toegvoegt aan de gitlabserver.}
+		\caption[Screenshot van het aanmaken van een git repository] {Hierboven zie je een screenshot waar een lector een nieuw repository toevoegt aan de gitlabserver.}
 		\label{fig:PoC7}
 	\end{figure}
     Gezien het thema van automatisatie is dit in het eindelijke playbook toch geautomatiseerd. 
@@ -133,7 +133,7 @@ Deze sectie geeft meer uitleg over BYOD-examen met deze opstelling, door een voo
 	\end{figure} 
 	
 	\item Tijdens het examen kunnen de studenten reeds pushen naar hun repository. Op het einde van het examen controleert de student of zijn oplossing correct op github staat.
-	\item De Lector kan nu alle repositories van de studenten binnenhalen en verbeteren.
+	\item De Lector kan nu alle repositories van de studenten binnen halen en verbeteren.
 	   			\begin{figure}[H]
 		\includegraphics[width=\linewidth]{img/Check01.png}
 		\caption[Screenshot van het overzicht die een lector heeft.] {Hierboven zie je wat de lector ziet na een examen, in dit geval heeft slechts 1 student een fork gemaakt}
