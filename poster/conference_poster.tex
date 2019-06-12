@@ -51,15 +51,15 @@
 % The widths of these boxes can be easily edited to accommodate your content as you see fit
 
 \begin{minipage}[t]{0.75\linewidth}
-\VeryHuge \color{HoGentAccent1} \textbf{Titel van uw bachelorproef} \color{Black}\\ % Title
-\Huge\textit{Ondertitel (eventueel)}\\[2.4cm] % Subtitle
-\huge \textbf{Naam Voornaam, co-promotor, promotor}\\[0.5cm] % Author(s)
+\VeryHuge \color{HoGentAccent1} \textbf{Analyse, architectuur en proof-of-concept van een beveiligde omgeving voor het afnemen van computerexamens op eigen laptop} \color{Black}\\ % Title
+\\
+\huge \textbf{Balliu Benoit, Van Vreckem Bert}\\[0.5cm] % Author(s)
 \huge Hogeschool Gent, Valentin Vaerwyckweg 1, 9000 Gent\\[0.4cm] % University/organization
-\Large \texttt{voornaam.naam@hogent.be} \\
+\Large \texttt{benoit.balliu.y9010@student.hogent.be} \\
 \end{minipage}
 %
 \begin{minipage}[t]{0.25\linewidth}
-\includegraphics[width=13cm,right]{figures/HG-woordmerk.jpg} 
+\includegraphics[width=13cm,right]{figures/HOGENT_Logo_Pos_rgb.png} 
 
 \end{minipage}
 
@@ -76,63 +76,122 @@
 \color{HoGentAccent1} % Navy color for the abstract
 
 \begin{abstract}
-It's only a model.
-You don't vote for kings. Who's that then? We found them. Ni! Ni! Ni! Ni!
-The nose? On second thoughts, let's not go there. It is a silly place. Bloody Peasant! And the hat. She's a witch! Where'd you get the coconuts?
+\bigskip
+Deze bachelorproef is gemaakt in opdracht van Hogeschool Gent, zij willen graag hun huidig systeem om examens op computer af te nemen moderniseren. Momenteel beheert de afdeling Systeembeheer van Hogeschool Gent een groot aantal desktops en softwarepakketten in combinatie met NetSupport School, maar daar loopt af en toe iets mis. Het komt wel vaker voor dat examens niet automatisch opgehaald kunnen worden of examens niet door kunnen gaan omdat de juiste software niet ge\"{i}nstalleerd is. 
+
+Voor het nieuwe systeem wil Hogeschool Gent de mogelijkheid van bring-your-own-device examens onderzoeken. Dit is een systeem waarbij de studenten de examens afleggen op hun eigen laptop. De grootste uitdaging van dergelijk systeem is deze laptops genoeg beveiligen tegen fraude. Voor dit onderzoek werd uitdrukkelijk gevraagd om te onderzoeken of zo een systeem haalbaar is zonder dat studenten hiervoor speciale software op hun systeem dienen te installeren.
+
+Na het onderzoeken van enkele systemen is er besloten een proof-of-concept op te stellen van een beveiligde netwerkomgeving. Hoewel deze omgeving alle vormen van fraude via het internet voorkomt, kan er niet uitgesloten worden dat een student opgeloste oefeningen of een cursus op zijn laptop heeft staan. Dit systeem voldoet dus niet aan de eisen van de Hogeschool Gent want het zou een stuk minder veilig zijn dan de methode die ze vandaag hanteert. 
+
+De belangrijkste conclusie van dit onderzoek is dat fraude op laptops van de studenten niet kan uitgesloten worden zonder dat er speciale software (bijvoorbeeld monitoring-software) ge\"{i}nstalleerd wordt. Het lijkt mij daarom interessant om het onderzoek naar bring-your-own-device examens opnieuw te voeren met andere uitgangspunten. Mogelijks lijdt een aangepast onderzoek tot nieuwe inzichten.
 \end{abstract}
 %----------------------------------------------------------------------------------------
 %	INTRODUCTION
 %----------------------------------------------------------------------------------------
 
 \color{HoGentAccent1} 
-\section*{Introductie}
-\color{black}
-\color{black}
-Be quiet! Found them? In Mercia?! The coconut's tropical! But you are dressed as one… Well, what do you want? Knights of Ni, we are but simple travelers who seek the enchanter who lives beyond these woods.
+ \section*{Introductie}
+ \color{black}
+ \color{black}
+ 
+ Momenteel worden de meeste computerexamens op Hogeschool Gent in een beveiligde omgeving op een computer van de hogeschool afgenomen. Deze methodiek heeft enkele nadelen. De voornaamste is de onbetrouwbaarheid van de omgeving. Wanneer een systeem zo'n kritieke functie heeft, is er slechts een kleine foutenmarge, het huidige systeem overschrijdt deze marge.  Verder zorgt het systeem ook voor een hoge kost, de hogeschool moet een groot aantal computers ter beschikking stellen en deze moeten beschikken over software eigen aan het examen, en monitoringsoftware zodat de examens in een beveiligde omgeving afgelegd kunnen worden. \\ In deze bachelorproef onderzoeken we de haalbaarheid van een beveiligde omgeving waar studenten computerexamens op hun eigen laptop kunnen afleggen. Deze beveilige omgeving moet fraude uitsluiten. \\
+ 
+ 
 
-Well, what do you want? It's only a model. Camelot! We found them. We shall say 'Ni' again to you, if you do not appease us.
 
-The nose? Shut up! Burn her! I am your king. You don't vote for kings.
 
-You can't expect to wield supreme power just 'cause some watery tart threw a sword at you! Well, we did do the nose. I don't want to talk to you no more, you empty-headed animal food trough water! I fart in your general direction! Your mother was a hamster and your father smelt of elderberries! Now leave before I am forced to taunt you a second time!
-
-Why do you think that she is a witch? We want a shrubbery!! I don't want to talk to you no more, you empty-headed animal food trough water! I fart in your general direction! Your mother was a hamster and your father smelt of elderberries! Now leave before I am forced to taunt you a second time!
 %----------------------------------------------------------------------------------------
 %	GEOLOGY
 %----------------------------------------------------------------------------------------
 
 \color{Black} % DarkSlateGray color for the rest of the content
 \color{HoGentAccent1} 
-\section*{Experimenten}
+\section*{Mogelijke opstellingen}
 \color{black}
-A newt? Camelot! Why? No, no, no! Yes, yes. A bit. But she's got a wart.
 
-Shut up! I dunno. Must be a king. Who's that then? Look, my liege! On second thoughts, let's not go there. It is a silly place.
+Het invoeren van BYOD examens kan op verschillende manieren. Daarom is er een scope vastgesteld voor dit onderzoek. De implementatie van BYOD examens moet hetzelfde zijn voor de 3 meest gangbare besturingssystemen (Linux, MacOs en Windows) en het is niet de bedoeling, dat een student specifieke software moet installeren (voor monitoring of internet filtering e.d.). Deze scope limiteert het aantal mogelijke implementaties. In dit onderzoek zijn er 4 manieren om BYOD examens te faciliteren onderzocht, namelijk: \\
 
-Shut up! Will you shut up?! No, no, no! Yes, yes. A bit. But she's got a wart. He hasn't got shit all over him. It's only a model. It's only a model.
+\begin{itemize} 
+	\item \textbf{Desktop virtualisatie via een cloudprovider}
+	\item \textbf{Beveiligde, configureerbare netwerkomgeving om internettoegang tot niet-toegestane sites vanop laptops tegen te gaan.	}
+	\item \textbf{Safe Exam Browser }
+	\item \textbf{Televic AssessmentQ / AVIDAnet Lite}
+\end{itemize}
+\bigskip
+ Na wat eigen onderzoek hierrond, bleek dat de laatste 2 in deze lijst  out of scope vielen. Deze zijn enkel bruikbaar voor examens die louter uit vragenlijsten bestaan. Voor beide systemen is er een extra programma nodig dat op de laptop van de student ge\"{i}nstalleerd zou moeten worden. Bij een safe exam browser moet er buiten de browser zelf ook nog een kiosk-applicatie ge\"{i}nstalleerd worden, die bepaalde systeemfuncties kan blokkeren tijdens een examen  Kiosk software is een allesomvattende term voor software waarbij het systeem afgeschermd is van interactie door gebruikers binnen een bepaalde scope. Televic assessmentQ maakt op zijn beurt gebruik van zo een Safe Exam Browser. \\
 
-Bring her forward! I don't want to talk to you no more, you empty-headed animal food trough water! I fart in your general direction! Your mother was a hamster and your father smelt of elderberries! Now leave 
+\textbf{Desktopvirtualisatie via een cloudprovider}
 
+Een lector bouwt een examen-image vanaf een template. Hij installeert op dergelijke template de nodige software voor het examen, plaatst de nodige files op het systeem (GitHub Classroom) en test of alles werkt.  Daarna wordt er via een tool (Packer e.d.) een image van die machine gemaakt.  Bij aanvang van het examen vraagt elke student een kopie van die virtuele machine aan via een cloudprovider (Amazon AWS, Microsoft Azure e.d.) met credentials die door de school worden aangeleverd. De lector kan via de firewallinstellingen ook beslissen of de studenten op het internet mogen en indien toegestaan welke sites ze mogen bezoeken. Na het verwerven van de toegang tot hun persoonlijke machine krijgen ze, zoals bij een normaal examen, tijd om de vragen te beantwoorden. Wanneer ze daarmee klaar zijn kunnen ze hun examen via GitHub Classroom indienen en wordt de machine terug verwijderd. \\
+
+
+
+\textbf{Beveiligde, configureerbare netwerkomgeving om internettoegang tot niet-toegestane sites vanop laptops tegen te gaan.	} 
+
+Hierover is meer te lezen in de volgende sectie.
+
+\bigskip
+
+\bigskip
 
 
 \color{HoGentAccent1} 
-\section*{Sectie met figuur}
+\section*{Finale opstelling}
 \color{black}
 
-
 \begin{center}\vspace{1cm}
-\includegraphics[width=1.0\linewidth]{grail}
-\captionof{figure}{\color{HoGentAccent5} He hasn't got shit all over him. The nose? Where'd you get the coconuts? What do you mean? We shall say 'Ni' again to you, if you do not appease us}
+	\includegraphics[width=1.0\linewidth]{gns3FinalPoC}
+	\label{1}
+	\captionof{figure}{\color{HoGentAccent5} Eindelijke opstelling, hier voorgesteld in GNS3}
 \end{center}\vspace{1cm}
+
+De opstelling van de  proof-of-concept, die u terug kan vinden op figuur 1, bestaat uit:
+\begin{itemize}
+	\item pfSense router en firewall
+	\item CentOS server met een dnsmasq DNS en DHCP Server
+	\item CentOS server met Gitlab Community Edition ge\"{\i}nstalleerd.
+	\item Switch
+	\item End devices (laptops)
+\end{itemize}
+\bigskip
+
+\textbf{Functionaliteiten}
+
+Hier volgt een opsomming van alle functionaliteiten die een dergelijke opstelling bevat.
+
+\begin{itemize}
+	\item Alle admin systemen zijn beveiligd volgens een Baseline gebaseerd op de CIS Guidelines (Zie bijlage).
+	\item Het opzetten van de omgeving voor een examen wordt grotendeels door Ansible gedaan.
+	\item Een lector kan dankzij het gebruiksvriendelijke Ansible zijn examenomgeving vlot zelf configureren.
+	\item De studenten kunnen enkel browsen naar websites die toegestaan zijn door de lectoren.
+	\item Beveiliging op zowel de firewall en DNS zorgen ervoor dat studenten geen VPN-verbinding kunnen maken of een andere DNS Server kunnen gebruiken.
+	\item Studenten kunnen hun examen van de lokale Gitlab server halen en na het examen indienen via Gitlab
+	\item Er wordt gemonitord of studenten niet met andere netwerken verbinden.
+\end{itemize}
+\bigskip
+
+\textbf{Ontbrekende functionaliteiten}
+
+Deze proof-of-concept is geen ideale oplossing voor het nieuwe examensysteem, maar wel de best mogelijke oplossing binnen dit onderzoek.
+Toch blijft er een functionaliteit over die voor sommige examens een nice-to-have is en voor andere een must-have, namelijk: 
+
+Studenten hebben volledige toegang tot documenten op hun eigen laptop. Indien zij reeds gemaakte oefeningen, opgeloste voorbeeldexamens of vorige versies van examens bij zouden hebben, is het mogelijk dat zij een oneerlijk voordeel krijgen tegenover andere studenten. Volgens een lector die programmeerexamens afneemt, maakt dat voor examens zoals "Object-Geori\"{e}nteerd Programmeren III" minder uit in vergelijking met "Object-Geori\"{e}nteerd Programmeren I", waarbij het voor die lector noodzakelijk is dat studenten geen toegang hebben tot alle oefeningen.
+
+
+
 
 %------------------------------------------------
 
 
 
 \color{HoGentAccent1} 
-\section*{Conclusies}
+\section*{Conclusie}
 \color{black}
-on't underestimate the Force. Oh God, my uncle. How am I ever gonna explain this? I suggest you try it again, Luke. This time, let go your conscious self and act on instinct. Don't be too proud of this technological terror you've constructed. The ability to destroy a planet is insignificant next to the power of the Force.
+
+Uit het onderzoek naar een nieuwe, BYOD, examenomgeving is gebleken dat dergelijke omgeving nooit genoeg beveiligd kan worden tegen fraude. Dit natuurlijk binnen de scope die aan het onderzoek gegeven is, namelijk, het is niet de bedoeling dat er software op apparaten van de studenten ge\"{\i}nstalleerd wordt. De beveiligde netwerkomgeving, zoals voorgesteld in in de vorige sectie, is de enige omgeving die tegen fraude via het internet beschermt. In dergelijke omgeving is er geen controle op de documenten waarover de student beschikt. De nieuwe examenomgeving zou minstens het zelfde niveau van beveiliging als het huidige NetSupport School systeem moeten halen.  
+
+
+
 %----------------------------------------------------------------------------------------
 %	FORTHCOMING RESEARCH
 %----------------------------------------------------------------------------------------
@@ -140,10 +199,7 @@ on't underestimate the Force. Oh God, my uncle. How am I ever gonna explain this
 \section*{Toekomstig onderzoek}
 \color{black}
 
-I care. So, what do you think of her, Han? No! Alderaan is peaceful. We have no weapons. You can't possibly… I have traced the Rebel spies to her. Now she is my only link to finding their secret base.
-
-Kid, I've flown from one side of this galaxy to the other. I've seen a lot of strange stuff, but I've never seen anything to make me believe there's one all-powerful Force controlling everything. There's no mystical energy field that controls my destiny. It's all a lot of simple tricks and nonsense. You are a part of the Rebel Alliance and a traitor! Take her away! 
-
+Het principe van bring-your-own-device examens is wel interessant gebleken, vooral door de lagere kosten en de kleinere administratieve overhead. Het zou daarom opportuun zijn om dit onderzoek te hernemen, met een gewijzigde scope. Indien bij het onderzoeken van een BYOD examenomgeving, het installeren van (kiosk)software op apparaten van studenten toegestaan is, kan dergelijk onderzoek mogelijks een ander resultaat opleveren.
 
 %----------------------------------------------------------------------------------------
 
